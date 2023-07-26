@@ -1,7 +1,7 @@
 NAME = ping_pong
 
 OBJ = get_next_line/get_next_line.o get_next_line/get_next_line_utils.o\
-main.o movment.o pixils.o event.o put.o split.o
+src/main.o src/movment.o src/pixils.o src/event.o src/put.o src/split.o
 
 MLX_FLAG = -lmlx -framework OpenGL -framework AppKit -fsanitize=address -g
 
