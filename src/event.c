@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:54:18 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/26 21:23:12 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/27 08:32:33 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	mouse_event(int x, int y, t_game *game)
 {
 	if (x > 80 && x < 600 && y > 394 && y < 560){
 		game->im_start = game->im_start2;
-		game->restart1 = game->restart1;
+		game->restart1 = game->restart1_2;
 		game->restart2 = game->restart2_2;
 	}
 	else{

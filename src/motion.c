@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 19:52:44 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/26 20:58:44 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/27 08:35:33 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_lose(t_game *game)
 		game->pos = 1;
 		if (game->win_2 == 5)
 			mlx_put_image_to_window(game->mlx,game->win,game->restart1, 0,0);
-		if (game->win_1 == 5)
+		else if (game->win_1 == 5)
 			mlx_put_image_to_window(game->mlx,game->win,game->restart2, 0,0);
 		else
 			mlx_put_image_to_window(game->mlx,game->win,game->im_start, 0,0);
