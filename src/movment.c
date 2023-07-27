@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:28:59 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/26 19:48:12 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/27 09:04:47 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,17 @@ void mov_left(t_game *game)
 		if (x < 112){
 			game->m_r = 1;
 			game->m_l = 0;
-			if(y < game->paddle2->y+60){
+			if(y < game->paddle2->y+55){
 				game->m_d=0;
 				game->m_u=1;
 			}
-			else if(y != game->paddle2->y+60){
+			else if(y > game->paddle2->y+65){
 				game->m_u=0;
 				game->m_d=1;
+			}
+			else{
+				game->m_u=0;
+				game->m_d=0;
 			}
 			return ;
 		}
@@ -116,13 +120,17 @@ void mov_rhit(t_game *game)
 		if (x > 528){
 			game->m_r = 0;
 			game->m_l = 1;
-			if(y < game->paddle1->y+60){
+			if(y < game->paddle1->y+55){
 				game->m_d=0;
 				game->m_u=1;
 			}
-			else if(y != game->paddle1->y+60){
+			else if(y > game->paddle1->y+65){
 				game->m_u=0;
 				game->m_d=1;
+			}
+			else{
+				game->m_u=0;
+				game->m_d=0;
 			}
 			return ;
 		}
