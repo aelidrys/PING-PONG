@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:27:36 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/26 13:44:39 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/26 20:59:13 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct s_imge
 typedef struct
 {
 	int		win_1;
+	int		start;
 	int		restart;
 	int		win_2;
 	int		lose;
@@ -67,6 +68,9 @@ typedef struct
 	float	teta;
 	void *mlx;
 	void *win;
+	void *im_start;
+	void *im_start1;
+	void *im_start2;
 	void *restart1;
 	void *restart2;
 	void *restart1_1;
@@ -80,7 +84,10 @@ typedef struct
 	char **map;
 }	t_game;
 
-void	init_var(t_game * game, char *file_name);
+void	init_var(t_game * game);
+void	ft_lose(t_game *game);
+char	*conv_to_str(int p, int win);
+void	init_img_win(t_game *game, char *file_name);
 void	my_mlx_pixel_put1(t_imge *data, int x, int y, int color);
 void	put_square(t_game * game, int old_x, int old_y, int color);
 void	put_player(t_game *game, float x_p, float y_p, int color);

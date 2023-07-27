@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:28:59 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/26 14:10:03 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/26 19:48:12 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,7 @@ void mov_left(t_game *game)
 	{
 			game->win_2++;
 			game->lose_1 = 1;
-		// if (!game->lose_1){
-		// 	printf("%d\n", game->win_2);
-		// }
 	}
-	// else
-	// 	game->lose_1 = 0;
 	if (y > game->paddle2->y && y < game->paddle2->y+120){
 		if (x < 112){
 			game->m_r = 1;
@@ -116,12 +111,7 @@ void mov_rhit(t_game *game)
 	if (x > 560){
 			game->win_1++;
 			game->lose_2 = 1;
-		// if (!game->lose_2){
-		// 	printf("%d\n", game->win_1);
-		// }
 	}
-	// else
-	// 	game->lose_2 = 0;
 	if (y > game->paddle1->y && y < game->paddle1->y+120){
 		if (x > 528){
 			game->m_r = 0;

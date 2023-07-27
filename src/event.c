@@ -6,26 +6,11 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:54:18 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/26 14:10:00 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/26 21:23:12 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../mini_game.h"
-
-int motion(t_game *game)
-{
-	ft_lose(game);
-	randrine(game);
-	if (game->pos == 1)
-		return (0);
-	mov_rhit(game);
-	mov_left(game);
-	mov_up(game);
-	mov_down(game);
-	mov_paddle_1(game);
-	mov_paddle_2(game);
-	return (0);
-}
 
 int	relesse_key(int key, t_game *game)
 {
@@ -84,10 +69,12 @@ int	presse_key(int key, t_game *game)
 int	mouse_event(int x, int y, t_game *game)
 {
 	if (x > 80 && x < 600 && y > 394 && y < 560){
-		game->restart1 = game->restart1_2;
+		game->im_start = game->im_start2;
+		game->restart1 = game->restart1;
 		game->restart2 = game->restart2_2;
 	}
 	else{
+		game->im_start = game->im_start1;
 		game->restart1 = game->restart1_1;
 		game->restart2 = game->restart2_1;
 	}
@@ -97,15 +84,14 @@ int	mouse_event(int x, int y, t_game *game)
 
 int		mouse_presse(int key, int x, int y, t_game *game)
 {
-	printf("%d\n", key);
 	if (!game->lose)
 		return (0);
-	if (key == 1 && x > 0 && x < 600 && y > 0 && y < 560){
+	if (key == 1 && x > 80 && x < 600 && y > 394 && y < 560){
 
+		game->start = 1;
 		game->restart = 1;
 		game->lose = 0;
 		game->pos = 0;
-		printf("enter %d\n", game->restart);
 	}
 	return (0);
 }
