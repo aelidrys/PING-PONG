@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:54:18 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/27 08:32:33 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/27 19:31:29 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,14 @@ int	presse_key(int key, t_game *game)
 int	mouse_event(int x, int y, t_game *game)
 {
 	if (x > 80 && x < 600 && y > 394 && y < 560){
-		game->im_start = game->im_start2;
-		game->restart1 = game->restart1_2;
-		game->restart2 = game->restart2_2;
+		game->imgs->im_start = game->imgs->im_start2;
+		game->imgs->restart1 = game->imgs->restart1_2;
+		game->imgs->restart2 = game->imgs->restart2_2;
 	}
 	else{
-		game->im_start = game->im_start1;
-		game->restart1 = game->restart1_1;
-		game->restart2 = game->restart2_1;
+		game->imgs->im_start = game->imgs->im_start1;
+		game->imgs->restart1 = game->imgs->restart1_1;
+		game->imgs->restart2 = game->imgs->restart2_1;
 	}
 
 	return (0);
@@ -86,12 +86,11 @@ int		mouse_presse(int key, int x, int y, t_game *game)
 {
 	if (!game->lose)
 		return (0);
-	if (key == 1 && x > 80 && x < 600 && y > 394 && y < 560){
+	if (game->lose && key == 1 && x > 80 && x < 600 && y > 394 && y < 560){
 
 		game->start = 1;
 		game->restart = 1;
 		game->lose = 0;
-		game->pos = 0;
 	}
 	return (0);
 }

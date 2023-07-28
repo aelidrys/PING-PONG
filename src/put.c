@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:56:56 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/26 14:10:10 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/28 07:39:42 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,19 @@ void	put_paddle(t_game *game, int s)
 			my_mlx_pixel_put1(game->img, x,y++,10377521);
 		x++;
 	}
+}
+
+void	put_score(t_game *game)
+{
+	mlx_clear_window(game->mlx, game->win);
+	mlx_string_put(game->mlx, game->win, 70, 10, 16748815,
+		conv_to_str(1,game->win_1));
+	mlx_string_put(game->mlx, game->win, 500, 10, 16748815,
+		conv_to_str(2,game->win_2));
+	mlx_string_put(game->mlx, game->win, 70, 10, 16748815,
+		conv_to_str(1,game->win_1));
+	mlx_string_put(game->mlx, game->win, 500, 10, 16748815,
+		conv_to_str(2,game->win_2));
 }
 
 void randrine(t_game *game)

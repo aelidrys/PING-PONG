@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:27:36 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/26 20:59:13 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/27 19:36:43 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,25 @@ typedef struct s_paddle
 	int		x;
 	int		y;
 }	t_paddle;
+
+typedef struct s_imgs
+{
+	void *pos;
+	void *pos_0;
+	void *pos_1;
+	void *pos_2;
+	void *pos_3;
+	void *pos_4;
+	void *im_start;
+	void *im_start1;
+	void *im_start2;
+	void *restart1;
+	void *restart2;
+	void *restart1_1;
+	void *restart1_2;
+	void *restart2_1;
+	void *restart2_2;
+}	t_imgs;
 
 typedef struct s_imge
 {
@@ -68,17 +87,9 @@ typedef struct
 	float	teta;
 	void *mlx;
 	void *win;
-	void *im_start;
-	void *im_start1;
-	void *im_start2;
-	void *restart1;
-	void *restart2;
-	void *restart1_1;
-	void *restart1_2;
-	void *restart2_1;
-	void *restart2_2;
 	t_paddle *paddle1;
 	t_paddle *paddle2;
+	t_imgs *imgs;
 	t_imge *img;
 	t_imge *img1;
 	char **map;
@@ -86,6 +97,8 @@ typedef struct
 
 void	init_var(t_game * game);
 void	ft_lose(t_game *game);
+void	pos(t_game *game);
+void	put_score(t_game *game);
 char	*conv_to_str(int p, int win);
 void	init_img_win(t_game *game, char *file_name);
 void	my_mlx_pixel_put1(t_imge *data, int x, int y, int color);

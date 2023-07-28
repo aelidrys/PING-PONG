@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 08:48:00 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/26 20:55:04 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/27 19:24:47 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int main(int ac, char **av)
 		return (0);
 	game = malloc(sizeof(t_game));
 	game->img = malloc(sizeof(t_imge));
+	game->imgs = malloc(sizeof(t_imgs));
 	game->paddle1 = malloc(sizeof(t_paddle));
 	game->paddle2 = malloc(sizeof(t_paddle));
 	init_img_win(game, av[1]);
