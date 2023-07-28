@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:54:18 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/27 19:31:29 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/28 19:44:34 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,23 +68,32 @@ int	presse_key(int key, t_game *game)
 
 int	mouse_event(int x, int y, t_game *game)
 {
-	if (x > 80 && x < 600 && y > 394 && y < 560){
+	if (game->lose && x > 80 && x < 600 && y > 394 && y < 560){
 		game->imgs->im_start = game->imgs->im_start2;
 		game->imgs->restart1 = game->imgs->restart1_2;
 		game->imgs->restart2 = game->imgs->restart2_2;
 	}
-	else{
+	else if (game->lose) {
 		game->imgs->im_start = game->imgs->im_start1;
 		game->imgs->restart1 = game->imgs->restart1_1;
 		game->imgs->restart2 = game->imgs->restart2_1;
 	}
-
+	if (game->pos && x > 30 && x < 105 && y > 440 && y < 520)
+		game->imgs->pos = game->imgs->pos_1;
+	else if (game->pos && x > 150 && x < 220 && y > 440 && y < 520)
+		game->imgs->pos = game->imgs->pos_2;
+	else if (game->pos && x > 269 && x < 338 && y > 440 && y < 520)
+		game->imgs->pos = game->imgs->pos_3;
+	else if (game->pos && x > 378 && x < 513 && y > 442 && y < 520)
+		game->imgs->pos = game->imgs->pos_4;
+	else if (game->pos)
+		game->imgs->pos = game->imgs->pos_0;
 	return (0);
 }
 
 int		mouse_presse(int key, int x, int y, t_game *game)
 {
-	if (!game->lose)
+	if (!game->lose && !game->pos)
 		return (0);
 	if (game->lose && key == 1 && x > 80 && x < 600 && y > 394 && y < 560){
 
@@ -92,5 +101,15 @@ int		mouse_presse(int key, int x, int y, t_game *game)
 		game->restart = 1;
 		game->lose = 0;
 	}
+	else if (game->pos && x > 30 && x < 105 && y > 440 && y < 520)
+		game->pos = 0;
+	else if (game->pos && x > 378 && x < 513 && y > 442 && y < 520)
+		ft_exit();
+	else if (game->pos && x > 150 && x < 220 && y > 440 && y < 520){
+		game->win_1 = 0;
+		game->win_2 = 0;
+		init_var(game);
+	}
+
 	return (0);
 }
