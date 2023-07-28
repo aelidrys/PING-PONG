@@ -1,7 +1,8 @@
 # PING-PONG
 ## 2D game
-- codinge by c language with usinge of mlx library
+- PING-PONG is a 2D gme codinge by c language with usinge of mlx library
 
+### some instructions
 ![desciption](img/pos_0.png)
 
 ---
