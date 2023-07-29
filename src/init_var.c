@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 19:42:31 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/27 19:37:26 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/29 09:32:12 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,11 @@ void	init_img_win(t_game *game, char *file_name)
 	game->imgs->restart2 = game->imgs->restart2_1;
 	game->win_1 = 0;
 	game->win_2 = 0;
+
+	game->imgs->pos_g0 = mlx_xpm_file_to_image(game->mlx, "img/pos_g0.xpm", &ac, &ac);
+	game->imgs->pos_g1 = mlx_xpm_file_to_image(game->mlx, "img/pos_g1.xpm", &ac, &ac);
+	game->imgs->pos_g2 = mlx_xpm_file_to_image(game->mlx, "img/pos_g2.xpm", &ac, &ac);
+	game->imgs->pos_g = game->imgs->pos_g0;
 
 	game->imgs->pos_0 = mlx_xpm_file_to_image(game->mlx, "img/pos_0.xpm", &ac, &ac);
 	game->imgs->pos_1 = mlx_xpm_file_to_image(game->mlx, "img/pos_1.xpm", &ac, &ac);

@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 08:48:00 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/27 19:24:47 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/28 20:39:36 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int main(int ac, char **av)
 	game->paddle2 = malloc(sizeof(t_paddle));
 	init_img_win(game, av[1]);
 	game->start = 0;
+	init_var(game);
 	randrine(game);
 	put_player(game, game->x, game->y, 16711680);
 	mlx_hook(game->win, 17, 0, ft_exit, NULL);

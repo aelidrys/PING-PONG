@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:56:56 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/28 07:39:42 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:56:41 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,7 @@ void	put_score(t_game *game)
 	mlx_clear_window(game->mlx, game->win);
 	mlx_string_put(game->mlx, game->win, 70, 10, 16748815,
 		conv_to_str(1,game->win_1));
-	mlx_string_put(game->mlx, game->win, 500, 10, 16748815,
-		conv_to_str(2,game->win_2));
-	mlx_string_put(game->mlx, game->win, 70, 10, 16748815,
-		conv_to_str(1,game->win_1));
-	mlx_string_put(game->mlx, game->win, 500, 10, 16748815,
+	mlx_string_put(game->mlx, game->win, 518, 10, 16748815,
 		conv_to_str(2,game->win_2));
 }
 
@@ -81,6 +77,7 @@ void randrine(t_game *game)
 {
 	if (game->lose)
 		return ;
+	put_score(game);
 	int x,y = 0;
 	while (game->map && game->map[y])
 	{
@@ -102,4 +99,5 @@ void randrine(t_game *game)
 	put_paddle(game,1);
 	put_paddle(game,2);
 	mlx_put_image_to_window(game->mlx, game->win, game->img->ptr, 0, 0);
+	mlx_put_image_to_window(game->mlx, game->win, game->imgs->pos_g, 256, 0);
 }

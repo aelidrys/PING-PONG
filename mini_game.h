@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:27:36 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/27 19:36:43 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/07/29 09:28:10 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ typedef struct s_paddle
 
 typedef struct s_imgs
 {
+	void *pos_g;
+	void *pos_g0;
+	void *pos_g1;
+	void *pos_g2;
 	void *pos;
 	void *pos_0;
 	void *pos_1;
@@ -97,7 +101,8 @@ typedef struct
 
 void	init_var(t_game * game);
 void	ft_lose(t_game *game);
-void	pos(t_game *game);
+void	ft_pos(t_game *game);
+void	ft_start(t_game *game);
 void	put_score(t_game *game);
 char	*conv_to_str(int p, int win);
 void	init_img_win(t_game *game, char *file_name);
