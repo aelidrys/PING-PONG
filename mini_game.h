@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:27:36 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/29 09:28:10 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/08/01 15:51:13 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,10 @@ void	my_mlx_pixel_put1(t_imge *data, int x, int y, int color);
 void	put_square(t_game * game, int old_x, int old_y, int color);
 void	put_player(t_game *game, float x_p, float y_p, int color);
 void	put_paddle(t_game *game, int s);
+void	mouse_restart(int x, int y, t_game *game);
+void	mouse_start(int x, int y, t_game *game);
 void	my_mlx_put(t_game *game, int x, int y, int color);
+void	mouse_pos(int x, int y, t_game *game);
 int		mouse_presse(int key, int x, int y, t_game *game);
 int		mouse_event(int x, int y, t_game *game);
 int		motion(t_game *game);

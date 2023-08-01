@@ -2,7 +2,7 @@ NAME = ping_pong
 
 OBJ = get_next_line/get_next_line.o get_next_line/get_next_line_utils.o\
 src/main.o src/movment.o src/pixils.o src/event.o src/put.o src/split.o\
-src/init_var.o src/motion.o
+src/init_var.o src/motion.o src/mouse.o
 
 MLX_FLAG = -lmlx -framework OpenGL -framework AppKit -fsanitize=address -g
 
