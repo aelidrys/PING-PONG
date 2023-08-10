@@ -6,39 +6,34 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:28:59 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/08/01 16:08:27 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:46:51 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../mini_game.h"
 
-void	mov_paddle_1(t_game *game)
+void	mov_paddle(t_game *game)
 {
+	// mov paddle 1
 	if (game->paddle1->m_u == 1 && game->paddle1->y > 64)
 		game->paddle1->y -= 12;
 	if (game->paddle1->m_d == 1 && game->paddle1->y < 456)
 		game->paddle1->y += 12;
-}
-
-void	mov_paddle_2(t_game *game)
-{
+	// mov paddle 2
 	if (game->paddle2->m_u == 1 && game->paddle2->y > 64)
 		game->paddle2->y -= 12;
 	if (game->paddle2->m_d == 1 && game->paddle2->y < 456)
-		game->paddle2->y += 12;;
+		game->paddle2->y += 12;
 }
 
 void mov_up(t_game *game)
 {
 	float t_rad;
-	float x,y;
-	x = game->x+cos(t_rad)*game->speed;
-	y = game->y+cos(t_rad)*game->speed;
-	t_rad = M_PI * game->teta / 180;
 
+	t_rad = M_PI * game->teta / 180;
 	if (game->m_u == 0)
 		return ;
-	if (y < 64){
+	if (game->y-16 < 64){
 		game->m_u = 0;
 		game->m_d = 1;
 		return ;
@@ -51,13 +46,11 @@ void mov_up(t_game *game)
 void mov_down(t_game *game)
 {
 	float t_rad;
+
 	t_rad = M_PI * game->teta / 180;
-	float x,y;
-	x = game->x+cos(t_rad)*game->speed;
-	y = game->y+cos(t_rad)*game->speed;
 	if (game->m_d == 0)
 		return ;
-	if (y > 576){
+	if (game->y+16 > 576){
 		game->m_d = 0;
 		game->m_u = 1;
 		return ;

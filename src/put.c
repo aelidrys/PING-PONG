@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:56:56 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/29 08:56:41 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:37:12 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	put_square(t_game * game, int old_x, int old_y, int color)
 	}
 }
 
-void	put_player(t_game *game, float x_p, float y_p, int color)
+void	put_ball(t_game *game, float x_p, float y_p, int color)
 {
 	float teta = 0;
 	float x,y;
@@ -95,7 +95,7 @@ void randrine(t_game *game)
 		}
 		y++;
 	}
-	put_player(game, game->x, game->y, 6565723);
+	put_ball(game, game->x, game->y, 6565723);
 	put_paddle(game,1);
 	put_paddle(game,2);
 	mlx_put_image_to_window(game->mlx, game->win, game->img->ptr, 0, 0);

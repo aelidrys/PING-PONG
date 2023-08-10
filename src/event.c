@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:54:18 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/08/01 16:03:59 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:29:14 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,11 @@ int		mouse_presse(int key, int x, int y, t_game *game)
 		game->restart = 1;
 		game->lose = 0;
 	}
-	else if (game->pos && x > 30 && x < 105 && y > 440 && y < 520)
+	else if (key == 1 && game->pos && x > 30 && x < 105 && y > 440 && y < 520)
 		game->pos = 0;
-	else if (game->pos && x > 378 && x < 513 && y > 442 && y < 520)
+	else if (key == 1 && game->pos && x > 378 && x < 513 && y > 442 && y < 520)
 		ft_exit();
-	else if (game->pos && x > 150 && x < 220 && y > 440 && y < 520){
+	else if (key == 1 && game->pos && x > 150 && x < 220 && y > 440 && y < 520){
 		game->win_1 = 0;
 		game->win_2 = 0;
 		init_var(game);

@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 08:48:00 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/28 20:39:36 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:37:12 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main(int ac, char **av)
 	game->start = 0;
 	init_var(game);
 	randrine(game);
-	put_player(game, game->x, game->y, 16711680);
+	put_ball(game, game->x, game->y, 16711680);
 	mlx_hook(game->win, 17, 0, ft_exit, NULL);
 	mlx_hook(game->win, 2, 0,presse_key, game);
 	mlx_hook(game->win, 3, 0,relesse_key, game);

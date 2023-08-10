@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:27:36 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/08/01 15:51:13 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:47:04 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char	*conv_to_str(int p, int win);
 void	init_img_win(t_game *game, char *file_name);
 void	my_mlx_pixel_put1(t_imge *data, int x, int y, int color);
 void	put_square(t_game * game, int old_x, int old_y, int color);
-void	put_player(t_game *game, float x_p, float y_p, int color);
+void	put_ball(t_game *game, float x_p, float y_p, int color);
 void	put_paddle(t_game *game, int s);
 void	mouse_restart(int x, int y, t_game *game);
 void	mouse_start(int x, int y, t_game *game);
@@ -119,8 +119,7 @@ int		mouse_event(int x, int y, t_game *game);
 int		motion(t_game *game);
 void	randrine(t_game *game);
 int		presse_key(int key, t_game *game);
-void	mov_paddle_1(t_game *game);
-void	mov_paddle_2(t_game *game);
+void	mov_paddle(t_game *game);
 int		relesse_key(int key, t_game *game);
 char	**spl1(char*s, char c);
 void	mov_up(t_game *game);

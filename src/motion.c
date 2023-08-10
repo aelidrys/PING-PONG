@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 19:52:44 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/29 08:31:18 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:47:10 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int motion(t_game *game)
 	mov_left(game);
 	mov_up(game);
 	mov_down(game);
-	mov_paddle_1(game);
-	mov_paddle_2(game);
+	mov_paddle(game);
 	return (0);
 }
 
