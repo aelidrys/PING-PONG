@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   motion.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/26 19:52:44 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/08/10 10:47:10 by aelidrys         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../mini_game.h"
 
 int motion(t_game *game)
@@ -25,7 +13,21 @@ int motion(t_game *game)
 	mov_up(game);
 	mov_down(game);
 	mov_paddle(game);
+	boot(game);
 	return (0);
+}
+
+void randrine(t_game *game)
+{
+	if (game->lose)
+		return ;
+	put_background(game);
+	put_ball(game, game->ball->x, game->ball->y, 6565723);
+	put_paddle(game,1);
+	put_paddle(game,2);
+	mlx_put_image_to_window(game->mlx, game->win, game->img->ptr, 0, 0);
+	mlx_put_image_to_window(game->mlx, game->win, game->imgs->pos_g, 256, 0);
+	put_score(game);
 }
 
 void	ft_pos(t_game *game)

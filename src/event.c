@@ -1,26 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   event.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/23 18:54:18 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/08/10 10:29:14 by aelidrys         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../mini_game.h"
 
 int	relesse_key(int key, t_game *game)
 {
-	if (key == 126 || key == 88)//6
+	if (key == 65362 || key == 65432)//6
 		game->paddle1->m_u = 0;
-	if (key == 125 || key == 85)//3
+	if (key == 65364 || key == 65435)//3
 		game->paddle1->m_d = 0;
-	if (key == 13)//w
+	if (key == 119)//w
 		game->paddle2->m_u = 0;
-	if (key == 1)//s
+	if (key == 115)//s
 		game->paddle2->m_d = 0;
 	return (0);
 }
@@ -29,20 +17,21 @@ int	presse_key(int key, t_game *game)
 {
 	if (!game->start)
 		return (0);
-	if (key == 88 || key == 126)//6
+	if (key == 65432 || key == 65362)//6
 		game->paddle1->m_u = 1;
-	if (key == 85 || key == 125)//3
+	if (key == 65435 || key == 65364)//3
 		game->paddle1->m_d = 1;
-	if (key == 13)//w
+	if (key == 119)//w
 		game->paddle2->m_u = 1;
-	if (key == 1)//s
+	if (key == 115)//s
 		game->paddle2->m_d = 1;
-	if (key == 69 && game->speed < 40)
-		game->speed +=  1;
-	if (key == 78 && game->speed > 1)
-		game->speed -=  1;
-	if (key == 53)
+	// if (key == 69 && game->speed < 40)
+	// 	game->speed +=  1;
+	// if (key == 78 && game->speed > 1)
+	// 	game->speed -=  1;
+	if (key == 65307)
 		ft_exit();
+	// rhit 65363 left 65361
 	return (0);
 }
 

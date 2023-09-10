@@ -54,7 +54,7 @@ void	*ft_calloc(size_t c, size_t s)
 	size_t	q;
 
 	q = 0;
-	if (s > 0 && c > SIZE_MAX / s)
+	if (s > 0 && c > 2147486374 / s)
 		return (NULL);
 	ptr = (char *)malloc(c * s);
 	if (!ptr)

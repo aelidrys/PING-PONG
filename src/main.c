@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/19 08:48:00 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/08/10 10:37:12 by aelidrys         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 # include "../mini_game.h"
 
 char	*conv_to_str(int p, int win)
@@ -35,23 +23,26 @@ int main(int ac, char **av)
 {
 	t_game *game;
 
-	if (!av[1])
+	if (!av[1]){
+		printf("no map\n");
 		return (0);
+	}
 	game = malloc(sizeof(t_game));
 	game->img = malloc(sizeof(t_imge));
+	game->ball = malloc(sizeof(t_ball));
 	game->imgs = malloc(sizeof(t_imgs));
 	game->paddle1 = malloc(sizeof(t_paddle));
 	game->paddle2 = malloc(sizeof(t_paddle));
+	init_var(game);
 	init_img_win(game, av[1]);
 	game->start = 0;
-	init_var(game);
 	randrine(game);
-	put_ball(game, game->x, game->y, 16711680);
-	mlx_hook(game->win, 17, 0, ft_exit, NULL);
-	mlx_hook(game->win, 2, 0,presse_key, game);
-	mlx_hook(game->win, 3, 0,relesse_key, game);
-	mlx_hook(game->win, 6, 0, mouse_event, game);
-	mlx_hook(game->win, 4, 0, mouse_presse, game);
+	put_ball(game, game->ball->x, game->ball->y, 16711680);
+	mlx_hook(game->win, 17, (1L<<0), ft_exit, NULL);
+	mlx_hook(game->win, 2, (1L<<0),presse_key, game);
+	mlx_hook(game->win, 3, (1L<<1),relesse_key, game);
+	mlx_hook(game->win, 6, (1L<<6), mouse_event, game);
+	mlx_hook(game->win, 4, (1L<<2), mouse_presse, game);
 	mlx_loop_hook(game->mlx, motion, game);
 	mlx_loop(game->mlx);
 }

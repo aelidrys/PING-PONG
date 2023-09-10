@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   init_var.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/26 19:42:31 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/07/29 09:32:12 by aelidrys         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../mini_game.h"
 
 void	init_var(t_game * game)
@@ -19,24 +7,27 @@ void	init_var(t_game * game)
 	game->lose = 0;
 	game->lose_1 = 0;
 	game->lose_2 = 0;
-	game->x = 320;
-	game->y = 320;
-	game->m_r = 1;
-	game->m_l = 0;
-	game->m_u = 0;
-	game->m_d = 0;
-	game->rot_rhit = 0;
-	game->rot_left = 0;
-	game->teta = 90;
-	game->speed = 6;
+	game->w_size =640;
+	game->ball->x = 320;
+	game->ball->y = 320;
+	game->ball->m_r = 1;
+	game->ball->m_l = 0;
+	game->ball->m_u = 0;
+	game->ball->m_d = 0;
+	game->ball->rot_rhit = 0;
+	game->ball->rot_left = 0;
+	game->ball->teta = 90;
+	game->ball->speed = 2;
+	game->ball->dimtr = SIZE/2;
 	game->paddle1->m_u = 0;
 	game->paddle1->m_d = 0;
 	game->paddle1->m_u = 0;
 	game->paddle1->m_d = 0;
-	game->paddle1->x = 544;
-	game->paddle1->y = 240;
-	game->paddle2->x = 64;
-	game->paddle2->y = 250;
+	game->paddle1->x = game->w_size-(SIZE*1.5);
+	game->paddle1->y = game->w_size/2;
+	game->paddle2->x = SIZE;
+	game->paddle2->y =	game->w_size/2;
+	game->paddle1->speed = 4;
 
 }
 
@@ -45,8 +36,8 @@ void	init_img_win(t_game *game, char *file_name)
 	int	ac;
 	game->map = spl1(get_next_line(open(file_name, O_RDONLY)), '\n');
 	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, 640, 640, "game");
-	game->img->ptr = mlx_new_image(game->mlx, 640, 640);
+	game->win = mlx_new_window(game->mlx,game->w_size,game->w_size,"game");
+	game->img->ptr = mlx_new_image(game->mlx, game->w_size, game->w_size);
 	game->img->addr = mlx_get_data_addr(game->img->ptr, &game->img->bits_per_pixel,
 		&game->img->line_length, &game->img->endian);
 	game->imgs->im_start1 = mlx_xpm_file_to_image(game->mlx, "img/start1.xpm", &ac, &ac);

@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 07:04:05 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/05/06 07:06:03 by aelidrys         ###   ########.fr       */
+/*   Created: 2023/08/17 11:39:14 by aelidrys          #+#    #+#             */
+/*   Updated: 2023/08/17 11:39:18 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "get_next_line.h"
 
@@ -63,3 +65,9 @@ char	*get_next_line(int fd)
 		return (0);
 	return (read_line(fd, p));
 }
+
+// int main()
+// {
+// 	int fd = open ("get_next_line.c", O_RDWR);
+// 	get_next_line(fd);
+// }

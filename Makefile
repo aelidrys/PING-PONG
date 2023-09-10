@@ -1,19 +1,27 @@
 NAME = ping_pong
 
-OBJ = get_next_line/get_next_line.o get_next_line/get_next_line_utils.o\
+CC = cc
+
+OBJ = src/get_next_line_utils.o src/get_next_line.o\
 src/main.o src/movment.o src/pixils.o src/event.o src/put.o src/split.o\
-src/init_var.o src/motion.o src/mouse.o
+src/init_var.o src/motion.o src/mouse.o src/boot.o
 
-MLX_FLAG = -lmlx -framework OpenGL -framework AppKit -fsanitize=address -g
+FLAG = -fsanitize=address -g
 
-build = $(NAME)
+MLX_FLAG = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+
+build : $(NAME)
 
 $(NAME) : $(OBJ)
-	gcc $(MLX_FLAG) $(OBJ) -o $(NAME)
+	cc $(OBJ)  -o $(NAME) $(MLX_FLAG)
+
+%.o:%.c
+	$(CC) -c -o $@ $<
 
 clean :
 	rm -rf $(OBJ)
 
 clean_all : clean
-	rm -rf $(OBJ)
 	rm -rf $(NAME)
+
+re : clean_all build

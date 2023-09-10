@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mouse.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 15:45:52 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/08/01 15:56:24 by aelidrys         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../mini_game.h"
 
 
@@ -38,8 +26,9 @@ void	mouse_pos(int x, int y, t_game *game)
 
 void	mouse_start(int x, int y, t_game *game)
 {
-	if (!game->start && x > 80 && x < 600 && y > 394 && y < 560)
+	if (!game->start && x > 80 && x < 600 && y > 394 && y < 560){
 		game->imgs->im_start = game->imgs->im_start2;
+	}
 	else if (!game->start)
 		game->imgs->im_start = game->imgs->im_start1;
 }
