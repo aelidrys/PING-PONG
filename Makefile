@@ -8,12 +8,14 @@ src/init_var.o src/motion.o src/mouse.o src/boot.o
 
 FLAG = -fsanitize=address -g
 
-MLX_FLAG = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+MLX_MFLAG = -lmlx -framework OpenGL -framework AppKit -lm
+
+MLX_UFLAG = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
 build : $(NAME)
 
 $(NAME) : $(OBJ)
-	cc $(OBJ)  -o $(NAME) $(MLX_FLAG)
+	cc $(OBJ)  -o $(NAME) $(MLX_MFLAG)
 
 %.o:%.c
 	$(CC) -c -o $@ $<

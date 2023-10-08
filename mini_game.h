@@ -6,7 +6,7 @@
 /*   By: aelidrys <aelidrys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:27:36 by aelidrys          #+#    #+#             */
-/*   Updated: 2023/08/17 11:45:38 by aelidrys         ###   ########.fr       */
+/*   Updated: 2023/09/10 12:08:30 by aelidrys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 #include <unistd.h>
 #include <string.h>
 #include <termios.h>
-#include "minilibx-linux/mlx.h"
-#include <X11/Xlib.h>
+// #include "minilibx-linux/mlx.h"
+// #include <X11/Xlib.h>
+#include <mlx.h>
 # include <fcntl.h>
 # include <math.h>
 #include "src/get_next_line.h"
@@ -137,6 +138,8 @@ int		motion(t_game *game);
 void	randrine(t_game *game);
 int		presse_key(int key, t_game *game);
 int		relesse_key(int key, t_game *game);
+int		presse_key_m(int key, t_game *game);
+int		relesse_key_m(int key, t_game *game);
 void	mov_paddle(t_game *game);
 void	mov_up(t_game *game);
 void	mov_down(t_game *game);

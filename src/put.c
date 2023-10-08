@@ -76,7 +76,6 @@ void put_background(t_game *game)
 				put_square(game, x * SIZE, y * SIZE, 6565723);
 			if (game->map[y][x] == '3')
 				put_square(game, x * SIZE, y * SIZE,  0x01568);
-			printf("%d\n",x * SIZE);
 			x++;
 		}
 		y++;

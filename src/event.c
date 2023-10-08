@@ -35,6 +35,42 @@ int	presse_key(int key, t_game *game)
 	return (0);
 }
 
+int	presse_key_m(int key, t_game *game)
+{
+	if (!game->start)
+		return (0);
+	if (key == 126 || key == 65362)//6
+		game->paddle1->m_u = 1;
+	if (key == 125 || key == 65364)//3
+		game->paddle1->m_d = 1;
+	if (key == 119)//w
+		game->paddle2->m_u = 1;
+	if (key == 115)//s
+		game->paddle2->m_d = 1;
+	// if (key == 69 && game->speed < 40)
+	// 	game->speed +=  1;
+	// if (key == 78 && game->speed > 1)
+	// 	game->speed -=  1;
+	if (key == 53)
+		ft_exit();
+	// rhit 65363 left 65361
+	return (0);
+}
+
+int	relesse_key_m(int key, t_game *game)
+{
+	if (key == 126 || key == 65432)//6
+		game->paddle1->m_u = 0;
+	if (key == 125 || key == 65435)//3
+		game->paddle1->m_d = 0;
+	if (key == 119)//w
+		game->paddle2->m_u = 0;
+	if (key == 115)//s
+		game->paddle2->m_d = 0;
+	return (0);
+}
+
+
 int	mouse_event(int x, int y, t_game *game)
 {
 	mouse_start(x,y,game);
