@@ -17,7 +17,7 @@ void	init_var(t_game * game)
 	game->ball->rot_rhit = 0;
 	game->ball->rot_left = 0;
 	game->ball->teta = 90;
-	game->ball->speed = 6;
+	game->ball->speed = 2;
 	game->ball->dimtr = SIZE/2;
 	game->paddle1->m_u = 0;
 	game->paddle1->m_d = 0;

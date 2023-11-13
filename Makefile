@@ -15,7 +15,7 @@ MLX_UFLAG = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 build : $(NAME)
 
 $(NAME) : $(OBJ)
-	cc $(OBJ)  -o $(NAME) $(MLX_MFLAG)
+	cc $(OBJ)  -o $(NAME) $(MLX_UFLAG)
 
 %.o:%.c
 	$(CC) -c -o $@ $<
