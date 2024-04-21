@@ -46,7 +46,7 @@ int main(int ac, char **av)
 	// mlx_hook(game->win, 6, 0, mouse_event, game);
 	// mlx_hook(game->win, 4, 0, mouse_presse, game);
 
-	// Ubonto
+	// Linux
 	mlx_hook(game->win, 17, (1L<<0), ft_exit, NULL);
 	mlx_hook(game->win, 2, (1L<<0),presse_key, game);
 	mlx_hook(game->win, 3, (1L<<1),relesse_key, game);
