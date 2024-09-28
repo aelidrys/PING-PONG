@@ -8,3 +8,7 @@
 ---
 ### imge of game
 ![game](img/game.png)
+
+<video width="500" height='500' controls>
+    <source src='game_video.webm' type='video/webm'>
+</video>
