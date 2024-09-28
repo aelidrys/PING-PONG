@@ -13,7 +13,8 @@ int motion(t_game *game)
 	mov_up(game);
 	mov_down(game);
 	mov_paddle(game);
-	boot(game);
+	// boot1(game);
+	boot2(game);
 	return (0);
 }
 

@@ -19,10 +19,12 @@
 #include <unistd.h>
 #include <string.h>
 #include <termios.h>
-// #include "minilibx-linux/mlx.h"
-// #include <X11/Xlib.h>
-#include <mlx.h>
+#include <sys/time.h>
+#include "mlx_linux/mlx.h"
+#include <X11/Xlib.h>
+// #include <mlx.h>
 # include <fcntl.h>
+# include <math.h>
 # include <math.h>
 #include "src/get_next_line.h"
 
@@ -112,7 +114,8 @@ typedef struct s_game
 
 
 
-void	boot(t_game *game);
+void	boot1(t_game *game);
+void	boot2(t_game *game);
 void	init_var(t_game * game);
 void	ft_lose(t_game *game);
 void	ft_pos(t_game *game);
