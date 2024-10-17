@@ -3,12 +3,11 @@
 - PING-PONG is a 2D gme codinge by c language with usinge of mlx library
 
 ### some instructions && tools
-![desciption](img/pos_0.png)
+<img src='img/pos.png'>
 
 ---
 ### imge of game
 <img src='img/home.png'>
-<img src='img/pos.png'>
 <img src='img/game.png'>
 
 <video width="500" height='500' controls>
