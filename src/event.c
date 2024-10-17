@@ -90,17 +90,17 @@ int		mouse_presse(int key, int x, int y, t_game *game)
 		game->pos = 1;
 	if (!game->lose && !game->pos && game->start)
 		return (0);
-	if (!game->start && key == 1 && x > 80 && x < 600 && y > 394 && y < 560)
+	if (!game->start && key == 1 && x > 89 && x < 549 && y > 372 && y < 478)
 		game->start = 1;
 	if (game->lose && key == 1 && x > 80 && x < 600 && y > 394 && y < 560){
 		game->restart = 1;
 		game->lose = 0;
 	}
-	else if (key == 1 && game->pos && x > 30 && x < 105 && y > 440 && y < 520)
+	else if (key == 1 && game->pos && x > 65 && x < 151 && y > 503 && y < 578)
 		game->pos = 0;
-	else if (key == 1 && game->pos && x > 378 && x < 513 && y > 442 && y < 520)
+	else if (key == 1 && game->pos && x > 500 && x < 574 && y > 503 && y < 578)
 		ft_exit();
-	else if (key == 1 && game->pos && x > 150 && x < 220 && y > 440 && y < 520){
+	else if (key == 1 && game->pos && x > 209 && x < 293 && y > 503 && y < 578){
 		game->win_1 = 0;
 		game->win_2 = 0;
 		init_var(game);

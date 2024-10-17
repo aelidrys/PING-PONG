@@ -40,9 +40,10 @@ void	init_img_win(t_game *game, char *file_name)
 	game->img->ptr = mlx_new_image(game->mlx, game->w_size, game->w_size);
 	game->img->addr = mlx_get_data_addr(game->img->ptr, &game->img->bits_per_pixel,
 		&game->img->line_length, &game->img->endian);
-	game->imgs->im_start1 = mlx_xpm_file_to_image(game->mlx, "img/start1.xpm", &ac, &ac);
-	game->imgs->im_start2 = mlx_xpm_file_to_image(game->mlx, "img/start2.xpm", &ac, &ac);
-	game->imgs->im_start = game->imgs->im_start1;
+	game->imgs->home1 = mlx_xpm_file_to_image(game->mlx, "img/home.xpm", &ac, &ac);
+	game->imgs->play_n = mlx_xpm_file_to_image(game->mlx, "img/play_n.xpm", &ac, &ac);
+	game->imgs->play_ai = mlx_xpm_file_to_image(game->mlx, "img/play_ai.xpm", &ac, &ac);
+	game->imgs->home = game->imgs->home1;
 
 	game->imgs->restart1_1 = mlx_xpm_file_to_image(game->mlx, "img/restart1_1.xpm", &ac, &ac);
 	game->imgs->restart1_2 = mlx_xpm_file_to_image(game->mlx, "img/restart1_2.xpm", &ac, &ac);
@@ -58,10 +59,10 @@ void	init_img_win(t_game *game, char *file_name)
 	game->imgs->pos_g2 = mlx_xpm_file_to_image(game->mlx, "img/pos_g2.xpm", &ac, &ac);
 	game->imgs->pos_g = game->imgs->pos_g0;
 
-	game->imgs->pos_0 = mlx_xpm_file_to_image(game->mlx, "img/pos_0.xpm", &ac, &ac);
-	game->imgs->pos_1 = mlx_xpm_file_to_image(game->mlx, "img/pos_1.xpm", &ac, &ac);
-	game->imgs->pos_2 = mlx_xpm_file_to_image(game->mlx, "img/pos_2.xpm", &ac, &ac);
-	game->imgs->pos_3 = mlx_xpm_file_to_image(game->mlx, "img/pos_3.xpm", &ac, &ac);
-	game->imgs->pos_4 = mlx_xpm_file_to_image(game->mlx, "img/pos_4.xpm", &ac, &ac);
+	game->imgs->pos_0 = mlx_xpm_file_to_image(game->mlx, "img/norml_pos.xpm", &ac, &ac);
+	game->imgs->pos_1 = mlx_xpm_file_to_image(game->mlx, "img/play.xpm", &ac, &ac);
+	game->imgs->pos_2 = mlx_xpm_file_to_image(game->mlx, "img/replay.xpm", &ac, &ac);
+	game->imgs->pos_3 = mlx_xpm_file_to_image(game->mlx, "img/grid.xpm", &ac, &ac);
+	game->imgs->pos_4 = mlx_xpm_file_to_image(game->mlx, "img/quit.xpm", &ac, &ac);
 	game->imgs->pos = game->imgs->pos_0;
 }

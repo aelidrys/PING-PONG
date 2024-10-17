@@ -41,7 +41,7 @@ void	ft_pos(t_game *game)
 void	ft_start(t_game *game)
 {
 	if (!game->start)
-		mlx_put_image_to_window(game->mlx,game->win,game->imgs->im_start, 0,0);
+		mlx_put_image_to_window(game->mlx,game->win,game->imgs->home, 0,0);
 }
 
 void	ft_lose(t_game *game)

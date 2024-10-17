@@ -12,13 +12,13 @@ void	mouse_pos(int x, int y, t_game *game)
 	else
 		game->imgs->pos_g = game->imgs->pos_g0;
 
-	if (game->pos && x > 30 && x < 105 && y > 440 && y < 520)
+	if (game->pos && x > 65 && x < 151 && y > 503 && y < 587)
 		game->imgs->pos = game->imgs->pos_1;
-	else if (game->pos && x > 150 && x < 220 && y > 440 && y < 520)
+	else if (game->pos && x > 209 && x < 293 && y > 503 && y < 587)
 		game->imgs->pos = game->imgs->pos_2;
-	else if (game->pos && x > 269 && x < 338 && y > 440 && y < 520)
+	else if (game->pos && x > 349 && x < 433 && y > 503 && y < 587)
 		game->imgs->pos = game->imgs->pos_3;
-	else if (game->pos && x > 378 && x < 513 && y > 442 && y < 520)
+	else if (game->pos && x > 500 && x < 574 && y > 503 && y < 587)
 		game->imgs->pos = game->imgs->pos_4;
 	else if (game->pos)
 		game->imgs->pos = game->imgs->pos_0;
@@ -26,11 +26,11 @@ void	mouse_pos(int x, int y, t_game *game)
 
 void	mouse_start(int x, int y, t_game *game)
 {
-	if (!game->start && x > 80 && x < 600 && y > 394 && y < 560){
-		game->imgs->im_start = game->imgs->im_start2;
+	if (!game->start && x > 89 && x < 549 && y > 372 && y < 478){
+		game->imgs->home = game->imgs->play_n;
 	}
 	else if (!game->start)
-		game->imgs->im_start = game->imgs->im_start1;
+		game->imgs->home = game->imgs->home1;
 }
 
 void	mouse_restart(int x, int y, t_game *game)

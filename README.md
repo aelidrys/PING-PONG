@@ -7,7 +7,9 @@
 
 ---
 ### imge of game
-![game](img/game.png)
+<img src='img/home.png'>
+<img src='img/pos.png'>
+<img src='img/game.png'>
 
 <video width="500" height='500' controls>
     <source src='game_video.mp4' type='video/mp4'>

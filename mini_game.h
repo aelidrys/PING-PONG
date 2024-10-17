@@ -52,9 +52,10 @@ typedef struct s_imgs{
 	void *pos_2;
 	void *pos_3;
 	void *pos_4;
-	void *im_start;
-	void *im_start1;
-	void *im_start2;
+	void *home;
+	void *home1;
+	void *play_n;
+	void *play_ai;
 	void *restart1;
 	void *restart2;
 	void *restart1_1;
