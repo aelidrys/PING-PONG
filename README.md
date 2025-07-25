@@ -2,8 +2,13 @@
 ## 2D game
 - PING-PONG is a 2D gme codinge by c language with usinge of mlx library
 
-### some instructions && tools
-<img src='img/pos.png'>
+### Runing
+```bash
+make
+```
+```bash
+./ping_pong map
+```
 
 ---
 ### imge of game
